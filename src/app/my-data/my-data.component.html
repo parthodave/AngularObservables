@@ -1,0 +1,22 @@
+<button (click)="fetchData()">Fetch All Data</button>
+
+<div style="margin-top: 20px;">
+  <h3>Users</h3>
+  <ul>
+    <li *ngFor="let user of users">{{ user.name }}</li>
+  </ul>
+</div>
+
+<div style="margin-top: 20px;">
+  <h3>Posts</h3>
+  <ul>
+    <li *ngFor="let post of posts">{{ post.title }}</li>
+  </ul>
+</div>
+
+<div style="margin-top: 20px;">
+  <h3>Comments</h3>
+  <ul>
+    <li *ngFor="let comment of comments">{{ comment.body }}</li>
+  </ul>
+</div>

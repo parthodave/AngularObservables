@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
       <a routerLink="/" style="margin-right: 20px; color: white;">🏠 Home</a>
       <a routerLink="/polling" style="color: white;">📡 Polling</a>
       <a routerLink="/searchbooks" style="color: white;">📡 Search Books</a>
+       <a routerLink="/ShowData" style="color: white;">📡 Show Data</a>
     </nav>
 
     <router-outlet></router-outlet>
