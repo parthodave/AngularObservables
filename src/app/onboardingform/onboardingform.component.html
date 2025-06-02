@@ -1,0 +1,42 @@
+ <form [formGroup]="onboardingForm" (ngSubmit)="onSubmit()">
+      <fieldset formGroupName="basicInfo">
+        <legend>Basic Info</legend>
+        <input formControlName="fullName" placeholder="Full Name" /><br />
+        <input formControlName="email" placeholder="Email" /><br />
+        <input formControlName="mobile" placeholder="Mobile" /><br />
+      </fieldset>
+
+      <fieldset formGroupName="kycInfo">
+        <legend>KYC Info</legend>
+        <input formControlName="pan" placeholder="PAN" /><br />
+        <input formControlName="aadhaar" placeholder="Aadhaar" /><br />
+      </fieldset>
+
+      <div>
+        <label>Account Type:</label>
+        <select formControlName="accountType">
+          <option value="">Select</option>
+          <option value="saving">Saving</option>
+          <option value="current">Current</option>
+          <option value="salary">Salary</option>
+        </select>
+      </div>
+
+      <div formArrayName="nominees">
+        <h4>Nominees</h4>
+        <div
+          *ngFor="let nominee of nominees.controls; let i = index"
+          [formGroupName]="i"
+          style="margin-bottom: 10px"
+        >
+          <input formControlName="name" placeholder="Nominee Name" />
+          <input formControlName="age" placeholder="Age" type="number" />
+          <input formControlName="relation" placeholder="Relation" />
+          <button type="button" (click)="removeNominee(i)">❌ Remove</button>
+        </div>
+        <button type="button" (click)="addNominee()">➕ Add Nominee</button>
+      </div>
+
+      <br />
+      <button type="submit">✅ Submit</button>
+    </form>
